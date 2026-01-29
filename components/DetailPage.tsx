@@ -311,8 +311,22 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
       </section>
 
       {/* Footer */}
-      <footer className="px-8 py-8 border-t border-white/10 text-center">
-        <p className="text-white/40 text-sm">© 2024 Ethnic Archive. Bảo tồn bản sắc giữa dòng chảy hội nhập.</p>
+      <footer className="px-8 py-16 border-t border-white/10">
+        <div className="max-w-6xl mx-auto text-center space-y-6">
+          <div className="flex items-center justify-center gap-2">
+            <div className="bg-primary/20 p-1.5 rounded shadow-lg border border-primary/20">
+              <span className="material-symbols-outlined text-primary text-sm">account_balance</span>
+            </div>
+            <span className="font-display text-lg font-bold tracking-widest uppercase">Ethnic Archive</span>
+          </div>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-white/40">
+            © 2026 Dự án bảo tồn văn hóa dân tộc. Tất cả quyền được bảo lưu.
+          </p>
+          <div className="flex gap-6 justify-center">
+            <span className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-white/40">public</span>
+            <span className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-white/40">share</span>
+          </div>
+        </div>
       </footer>
 
     </div>
@@ -337,84 +351,200 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
         </button>
       </nav>
 
-      <section className="px-8 md:px-24 py-16 text-center mt-20">
-        <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-[10px] uppercase mb-6 font-bold tracking-[0.3em]">LÝ LUẬN HỌC THUẬT</span>
-        <h1 className="font-display text-5xl md:text-7xl mb-6 leading-tight">Phần II: CƠ SỞ LÝ LUẬN</h1>
-        <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed italic">
-          "Phân tích hệ thống các quan điểm Marx-Lenin về vấn đề dân tộc và những quy luật phát triển tất yếu trong thời đại mới."
-        </p>
+      {/* Main Hero */}
+      <section className="px-8 md:px-24 py-24 mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <div className="mb-10 text-center">
+              
+              <h1 className="font-display text-6xl md:text-8xl leading-tight mb-4">
+              MỘT SỐ NỀN VĂN HÓA KHÁC Ở VIỆT NAM
+              </h1>
+              <p className="text-white/50 text-lg mt-6 max-w-4xl mx-auto">
+                Khám phá sự đa dạng văn hóa qua các di sản tiêu biểu từ Bắc đến Nam
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-16">
+            {/* Section 01: Xòe Thái */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">01.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Nghệ thuật Xòe Thái</h3>
+                  <p className="text-white/50 text-sm mt-2">Đại diện miền núi phía Bắc</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left: Cards */}
+                <div className="space-y-4">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">groups</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Góc nhìn lý thuyết</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Đây là minh chứng cho <span className="text-primary font-bold">"Khối đại đoàn kết"</span>. Trong vòng xòe, không có sự phân biệt giàu nghèo hay địa vị, mọi người đều nắm tay nhau. Vòng xòe hoa biểu trưng cho sự gắn kết.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">lightbulb</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Thông điệp bảo tồn</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Từ một điệu múa bản địa, Xòe Thái đã trở thành <span className="text-primary font-bold">Di sản UNESCO</span>. Điều này cho thấy khi ta biết tận dụng <span className="text-primary font-bold">"Sức mạnh mềm"</span>, văn hóa dân tộc sẽ trở thành cầu nối để Việt Nam hội nhập với thế giới.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Image */}
+                <div className="rounded-2xl overflow-hidden border border-white/10 h-full min-h-[400px]">
+                  <img 
+                    src="/Img/profile/xoe-Thai.jpg" 
+                    alt="Xòe Thái dance" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Section 02: Ok Om Bok */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">02.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Lễ hội Ok Om Bok & Đua ghe Ngo</h3>
+                  <p className="text-white/50 text-sm mt-2">Đại diện vùng Nam Bộ</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left: Cards */}
+                <div className="space-y-4">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">celebration</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Góc nhìn lý thuyết</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Thể hiện sự <span className="text-primary font-bold">"Bình đẳng và tôn trọng tín ngưỡng"</span>. Đảng và Nhà nước luôn tạo điều kiện để đồng bào Khmer duy trì lễ hội cúng Trăng, bảo tồn tiếng nói và chữ viết riêng ngay tại trường học.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">lightbulb</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Thông điệp bảo tồn</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Bảo tồn không phải là giữ nguyên trong bảo tàng, mà là làm cho nó <span className="text-primary font-bold">"sống"</span> trong đời sống hiện đại. Đua ghe Ngo giờ đây là một sự kiện thể thao - du lịch lớn, giúp phát triển kinh tế vùng DTTS.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Image */}
+                <div className="rounded-2xl overflow-hidden border border-white/10 h-full min-h-[400px]">
+                  <img 
+                    src="/Img/profile/Ok Om Bok.jpg" 
+                    alt="Đua ghe Ngo" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Section 03: Ka-tê */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">03.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Lễ hội Ka-tê</h3>
+                  <p className="text-white/50 text-sm mt-2">Người Chăm - Ninh Thuận, Bình Thuận</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left: Cards */}
+                <div className="space-y-4">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">castle</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Góc nhìn lý thuyết</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Đây là minh chứng cho chính sách <span className="text-primary font-bold">"Tự quyết và tự do tín ngưỡng"</span>. Nhà nước không chỉ bảo tồn di tích tháp Chàm mà còn tạo điều kiện để người dân tổ chức lễ hội lớn nhất của họ, thể hiện sự tôn trọng tối đa đối với tâm lý và truyền thống dân tộc.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">lightbulb</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Thông điệp bảo tồn</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Văn hóa Chăm là sự kết hợp giữa di sản vật thể (tháp cổ) và phi vật thể (lễ hội). Việc giữ gìn này giúp Việt Nam khẳng định sự <span className="text-primary font-bold">"Thống nhất trong đa dạng"</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Image */}
+                <div className="rounded-2xl overflow-hidden border border-white/10 h-full min-h-[400px]">
+                  <img 
+                    src="/Img/profile/le-hoi-kate.jpg" 
+                    alt="Lễ hội Ka-tê" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="px-8 md:px-24 py-12 grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div className="space-y-16">
-           <div className="flex items-center gap-4">
-             <span className="font-display text-4xl text-primary">01.</span>
-             <h2 className="text-3xl font-display font-bold">Hai xu hướng <br/> khách quan</h2>
-           </div>
-
-           <div className="grid grid-cols-1 gap-10">
-             <div className="space-y-5 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300">
-               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg">
-                 <span className="material-symbols-outlined">diversity_3</span>
-               </div>
-               <h3 className="text-xl font-bold">1. Sự thức tỉnh ý thức dân tộc</h3>
-               <p className="text-white/50 text-sm leading-relaxed">Cộng đồng dân tộc muốn tách ra để hình thành các quốc gia độc lập. Đây là kết quả của sự phát triển lực lượng sản xuất, sự trưởng thành về chính trị và mong muốn tự chủ về văn hóa, ngôn ngữ.</p>
-               <ul className="text-[10px] tracking-widest text-primary/70 space-y-2 uppercase font-bold">
-                 <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">trending_up</span> Khẳng định bản sắc riêng biệt</li>
-                 <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">trending_up</span> Chống lại sự đồng hóa cưỡng ép</li>
-               </ul>
-             </div>
-
-             <div className="space-y-5 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300">
-               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg">
-                 <span className="material-symbols-outlined">public</span>
-               </div>
-               <h3 className="text-xl font-bold">2. Sự liên hiệp các dân tộc</h3>
-               <p className="text-white/50 text-sm leading-relaxed">Các dân tộc có xu hướng liên kết, xóa bỏ rào cản ngăn cách để hợp tác phát triển kinh tế, văn hóa. Đây là hệ quả của cuộc cách mạng khoa học kỹ thuật và sự quốc tế hóa đời sống xã hội.</p>
-               <ul className="text-[10px] tracking-widest text-primary/70 space-y-2 uppercase font-bold">
-                 <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">trending_up</span> Hợp tác đa phương bền vững</li>
-                 <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">trending_up</span> Giao lưu văn hóa toàn cầu</li>
-               </ul>
-             </div>
-           </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-white/8 to-white/5 rounded-3xl p-10 border border-white/10 self-start shadow-2xl">
-           <div className="flex items-center gap-4 mb-10">
-             <span className="inline-block px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold">02</span>
-             <h2 className="text-2xl font-display font-bold">Cương lĩnh Dân tộc của V.I. Lenin</h2>
-           </div>
-
-           <div className="space-y-8">
-             {[
-               { id: '02.1', title: 'Các dân tộc hoàn toàn bình đẳng', desc: 'Không có đặc quyền cho bất kỳ dân tộc nào. Mọi dân tộc dù lớn hay nhỏ, dù ở trình độ phát triển nào cũng đều có nghĩa vụ và quyền lợi ngang nhau.' },
-               { id: '02.2', title: 'Các dân tộc được quyền tự quyết', desc: 'Quyền tự lựa chọn chế độ chính trị và con đường phát triển của mình. Đây là quyền làm chủ của mỗi dân tộc đối với vận mệnh của mình.' },
-               { id: '02.3', title: 'Liên hiệp công nhân tất cả các dân tộc', desc: 'Yếu tố quyết định để giải quyết vấn đề dân tộc theo lập trường giai cấp công nhân. Phản ánh sự thống nhất giữa sự nghiệp giải phóng dân tộc và giải phóng giai cấp.' }
-             ].map((item) => (
-               <div key={item.id} className="group border-b border-white/10 pb-6 last:border-0 hover:border-primary/30 transition-colors">
-                 <div className="flex justify-between items-start mb-3">
-                   <h4 className="text-base font-bold group-hover:text-primary transition-colors">{item.title}</h4>
-                   <span className="text-[10px] tracking-widest text-white/30 font-bold px-2 py-1 bg-white/5 rounded">{item.id}</span>
-                 </div>
-                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-               </div>
-             ))}
-           </div>
-        </div>
-      </section>
-
-      <footer className="px-8 md:px-24 py-16 border-t border-white/5 mt-20">
-         <div className="space-y-4 text-center">
-            <div className="flex items-center justify-center gap-2 text-primary font-bold">
-              <span className="material-symbols-outlined text-sm">nature_people</span>
-              <span className="text-[10px] uppercase tracking-[0.3em]">Lưu trữ Văn hóa Dân tộc</span>
+      <footer className="px-8 py-16 border-t border-white/10">
+        <div className="max-w-6xl mx-auto text-center space-y-6">
+          <div className="flex items-center justify-center gap-2">
+            <div className="bg-primary/20 p-1.5 rounded shadow-lg border border-primary/20">
+              <span className="material-symbols-outlined text-primary text-sm">account_balance</span>
             </div>
-            <div className="text-[9px] uppercase tracking-widest leading-loose text-white/40">
-              ĐỀ TÀI NGHIÊN CỨU CẤP BỘ SỐ 842/KH-VN <br/>
-              HỘI ĐỒNG BIÊN SOẠN: VIỆN KHOA HỌC XÃ HỘI VIỆT NAM <br/>
-              BẢN QUYỀN © 2024. PHỤC VỤ MỤC ĐÍCH GIÁO DỤC PHI LỢI NHUẬN.
-            </div>
-         </div>
+            <span className="font-display text-lg font-bold tracking-widest uppercase">Ethnic Archive</span>
+          </div>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-white/40">
+            © 2026 Dự án bảo tồn văn hóa dân tộc. Tất cả quyền được bảo lưu.
+          </p>
+          <div className="flex gap-6 justify-center">
+            <span className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-white/40">public</span>
+            <span className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-white/40">share</span>
+          </div>
+        </div>
       </footer>
     </div>
   );
@@ -422,7 +552,7 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
   const renderSectionIII = () => (
     <div className="animate-in fade-in duration-1000">
       <nav className="fixed top-0 left-0 right-0 p-6 flex justify-between items-center z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <button onClick={() => onNavigate('2')} className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity hover:text-[#50C878]">
+        <button onClick={() => onNavigate('2')} className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity hover:text-primary">
            <span className="material-symbols-outlined text-sm">arrow_back</span>
            QUAY LẠI: PHẦN II
         </button>
@@ -432,92 +562,217 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
           </div>
           <span className="font-display text-lg font-bold">ETHNIC ARCHIVE</span>
         </div>
-        <button onClick={onBack} className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity hover:text-[#50C878]">
+        <button onClick={onBack} className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity hover:text-primary">
            <span className="material-symbols-outlined text-sm">home</span>
            VỀ TRANG CHỦ
         </button>
       </nav>
 
-      <section className="px-8 md:px-24 py-16 text-center space-y-6 mt-20">
-        <span className="inline-block px-4 py-2 bg-[#50C878]/10 text-[#50C878] rounded-full font-bold tracking-[0.3em] text-[10px] uppercase">CHUYÊN ĐỀ NGHIÊN CỨU</span>
-        <h1 className="font-display text-5xl md:text-7xl leading-tight">Phần III: <span className="italic font-light">Tính tất yếu</span> của việc bảo tồn</h1>
-        <p className="text-white/50 max-w-3xl mx-auto text-base leading-relaxed">
-           Khám phá mối liên hệ mật thiết giữa bản sắc truyền thống và sức ép của quá trình hiện đại hóa trong bối cảnh hội nhập toàn cầu.
-        </p>
+      {/* Main Hero */}
+      <section className="px-8 md:px-24 py-24 mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <div className="mb-10 text-center">
+              <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg font-bold tracking-[0.2em] mb-8">ĐẶC ĐIỂM DÂN TỘC</span>
+              <h1 className="font-display text-6xl md:text-8xl leading-tight mb-4">
+                DÂN TỘC THIỂU SỐ<br/>
+                Ở VIỆT NAM
+              </h1>
+              <p className="text-white/50 text-lg mt-6 max-w-4xl mx-auto">
+                Việt Nam là quốc gia thống nhất của 54 dân tộc anh em. Vấn đề dân tộc luôn là nội dung chiến lược trong sự nghiệp cách mạng của Đảng ta.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-16">
+            {/* Section 01: Đặc điểm */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">01.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Đặc điểm dân tộc thiểu số</h3>
+                  <p className="text-white/50 text-sm mt-2">Bức tranh tổng quan</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left: Content */}
+                <div className="space-y-6">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">diversity_3</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Việt Nam - Quốc gia thống nhất 54 dân tộc</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Việt Nam là một quốc gia thống nhất của 54 dân tộc anh em. Vấn đề dân tộc luôn là một <span className="text-primary font-bold">nội dung chiến lược</span> trong sự nghiệp cách mạng của Đảng ta.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">location_on</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Cư trú xen kẽ</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Các dân tộc ở Việt Nam có sự cư trú xen kẽ, nhưng đặc biệt là đồng bào dân tộc thiểu số (DTTS) thường sinh sống ở những <span className="text-primary font-bold">vị trí chiến lược quan trọng về an ninh quốc phòng</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">trending_up</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Chênh lệch phát triển</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Dù còn tồn tại sự chênh lệch về trình độ phát triển kinh tế - xã hội, nhưng điểm sáng lớn nhất chính là <span className="text-primary font-bold">truyền thống đoàn kết lâu đời</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                        <span className="material-symbols-outlined text-lg">star</span>
+                      </div>
+                      <div className="pt-1">
+                        <h4 className="text-base font-bold mb-2 text-primary">Bản sắc đa dạng</h4>
+                        <p className="text-white/70 text-sm leading-relaxed">
+                          Mỗi dân tộc mang một bản sắc riêng, góp phần tạo nên sự phong phú cho nền văn hóa Việt Nam thống nhất. Chính những đặc điểm này đòi hỏi Đảng và Nhà nước phải có <span className="text-primary font-bold">chính sách đặc thù, toàn diện</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Image */}
+                <img 
+                  src="/Img/profile/54-dan-toc-vn.jpg" 
+                  alt="54 dân tộc Việt Nam" 
+                  className="w-full h-auto block rounded-2xl"
+                />
+              </div>
+            </div>
+
+            {/* Section 02: Quan điểm và chính sách */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">02.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Quan điểm và chính sách của Đảng</h3>
+                  <p className="text-white/50 text-sm mt-2">Chuyển mình mạnh mẽ</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                      <span className="material-symbols-outlined text-xl">policy</span>
+                    </div>
+                    <div className="pt-2">
+                      <h4 className="text-lg font-bold mb-3 text-primary">Chiến lược đại hội XII</h4>
+                      <p className="text-white/70 text-base leading-relaxed mb-4">
+                        Đại hội XII xác định <span className="text-primary font-bold">đoàn kết dân tộc là vấn đề chiến lược</span>. Chúng ta chuyển hẳn từ tư duy 'bao cấp' sang <span className="text-primary font-bold">'bình đẳng, cùng phát triển'</span> trên 5 trụ cột toàn diện:
+                      </p>
+                      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                        {['Chính trị', 'Kinh tế', 'Văn hóa', 'Xã hội', 'Quốc phòng'].map((item, i) => (
+                          <div key={i} className="px-3 py-2 bg-primary/10 text-primary rounded-lg text-xs font-bold text-center">
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                      <span className="material-symbols-outlined text-xl">trending_up</span>
+                    </div>
+                    <div className="pt-2">
+                      <h4 className="text-lg font-bold mb-3 text-primary">Điểm đột phá</h4>
+                      <p className="text-white/70 text-base leading-relaxed">
+                        Tư duy coi <span className="text-primary font-bold">văn hóa là nguồn lực kinh tế</span> chứ không phải gánh nặng ngân sách. Với nguyên tắc <span className="text-primary font-bold">"Văn hóa còn thì dân tộc còn"</span>, đây là lá chắn an ninh mềm trong kỷ nguyên số. Cụ thể hóa bằng <span className="text-primary font-bold">Chương trình 1719</span>, Nhà nước tập trung phát triển du lịch để người dân sống được bằng văn hóa, hướng tới đóng góp 7% GDP.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                      <span className="material-symbols-outlined text-xl">groups</span>
+                    </div>
+                    <div className="pt-2">
+                      <h4 className="text-lg font-bold mb-3 text-primary">Sự đồng lòng của 4 bên</h4>
+                      <p className="text-white/70 text-sm leading-relaxed mb-4">
+                        Để thành công, cần sự đồng lòng:
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {[
+                          { icon: 'person', label: 'Cán bộ phải hiểu' },
+                          { icon: 'elderly', label: 'Già làng phải giữ hồn cốt' },
+                          { icon: 'rocket_launch', label: 'Thanh niên phải số hóa, khởi nghiệp' },
+                          { icon: 'travel_explore', label: 'Du khách phải tôn trọng bản sắc' }
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                            <span className="material-symbols-outlined text-primary text-lg">{item.icon}</span>
+                            <span className="text-white/70 text-sm">{item.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Kết luận */}
+            <div className="p-8 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                  <span className="material-symbols-outlined text-xl">lightbulb</span>
+                </div>
+                <div className="pt-2">
+                  <h4 className="text-lg font-bold mb-3 text-primary">Kết luận</h4>
+                  <p className="text-white/70 text-base leading-relaxed">
+                    Chính sách dân tộc của Việt Nam đang chuyển mình mạnh mẽ, từ hỗ trợ đơn thuần sang <span className="text-primary font-bold">kích hoạt nội lực phát triển</span>. Đoàn kết dân tộc và phát huy bản sắc văn hóa không chỉ là nhiệm vụ chính trị mà còn là <span className="text-primary font-bold">động lực kinh tế quan trọng</span>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="px-8 md:px-24 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-         <div className="group relative rounded-3xl overflow-hidden aspect-square md:aspect-auto md:h-[600px] border border-white/10 hover:border-[#50C878]/30 transition-all duration-500 shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#A27B5C] to-[#2C3639] opacity-80"></div>
-            <img src="https://images.unsplash.com/photo-1493246507139-91e8bef99c17?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover mix-blend-overlay group-hover:scale-110 transition-transform duration-[3s]" alt="Context" />
-            <div className="absolute inset-0 p-10 flex flex-col justify-end">
-               <span className="px-3 py-1.5 bg-[#50C878]/20 rounded-lg text-[10px] tracking-widest uppercase w-fit mb-4 border border-[#50C878]/30 backdrop-blur-md text-[#50C878] font-bold">Bản sắc nội tại</span>
-               <h3 className="font-display text-3xl mb-6">Đặc điểm dân tộc tại Việt Nam</h3>
-               <p className="text-white/70 leading-relaxed mb-8 text-sm">
-                  Việt Nam là quốc gia đa dân tộc với 54 dân tộc anh em. Mỗi dân tộc mang trong mình một kho tàng di sản văn hóa riêng biệt từ ngôn ngữ, trang phục đến phong tục tập quán. Việc bảo tồn không chỉ là giữ gìn quá khứ, mà là duy trì tính đa dạng sinh học văn hóa, tạo nên sức mạnh nội sinh cho quốc gia.
-               </p>
-               <div className="space-y-3">
-                 <div className="flex items-center gap-3 text-xs font-bold text-[#50C878]"><span className="material-symbols-outlined text-base">diversity_2</span> Sự gắn kết cộng đồng thông qua các thiết chế văn hóa làng bản truyền thống.</div>
-                 <div className="flex items-center gap-3 text-xs font-bold text-[#50C878]"><span className="material-symbols-outlined text-base">temp_preferences_custom</span> Tri thức dân gian về y học, canh tác và bảo vệ môi trường sinh thái.</div>
-               </div>
+      <footer className="px-8 py-16 border-t border-white/10">
+        <div className="max-w-6xl mx-auto text-center space-y-6">
+          <div className="flex items-center justify-center gap-2">
+            <div className="bg-primary/20 p-1.5 rounded shadow-lg border border-primary/20">
+              <span className="material-symbols-outlined text-primary text-sm">account_balance</span>
             </div>
-         </div>
-
-         <div className="group relative rounded-3xl overflow-hidden aspect-square md:aspect-auto md:h-[600px] border border-white/10 hover:border-red-500/30 transition-all duration-500 shadow-2xl">
-            <div className="absolute inset-0 bg-[#111111]"></div>
-            <div className="absolute inset-0 opacity-40">
-               <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover" alt="Pop Culture" />
-            </div>
-            <div className="absolute top-10 right-10 w-14 h-14 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md bg-white/5">
-               <span className="material-symbols-outlined text-white/60">wb_sunny</span>
-            </div>
-            <div className="absolute inset-0 p-10 flex flex-col justify-end">
-               <span className="px-3 py-1.5 bg-red-500/20 rounded-lg text-[10px] tracking-widest uppercase w-fit mb-4 border border-red-500/30 backdrop-blur-md text-red-400 font-bold">Thách thức ngoại biên</span>
-               <h3 className="font-display text-3xl mb-6">Cơn lốc văn hóa đại chúng (Pop Culture)</h3>
-               <p className="text-white/70 leading-relaxed mb-8 text-sm">
-                  Quá trình đô thị hóa và sự xâm nhập của văn hóa đại chúng toàn cầu đang tạo ra một "phễu lọc" san bằng các giá trị khác biệt. Giới trẻ dân tộc thiểu số đứng trước nguy cơ đánh mất gốc rễ khi tiếp xúc với các trào lưu giải trí, lối sống tiêu thụ hiện đại.
-               </p>
-               <div className="space-y-3">
-                 <div className="flex items-center gap-3 text-xs font-bold text-white/50"><span className="material-symbols-outlined text-base">grid_view</span> Sự mai một của các ngôn ngữ mẹ đẻ trong giao tiếp hàng ngày.</div>
-                 <div className="flex items-center gap-3 text-xs font-bold text-white/50"><span className="material-symbols-outlined text-base">travel_explore</span> Nguy cơ thương mại hóa quá mức các di sản phi vật thể phục vụ du lịch.</div>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <section className="px-8 md:px-24 py-20">
-         <div className="h-px bg-gradient-to-r from-transparent via-[#50C878]/30 to-transparent w-full mb-16"></div>
-         <div className="text-center mb-12">
-           <span className="inline-block px-4 py-2 bg-[#50C878]/10 text-[#50C878] rounded-full text-xs font-bold tracking-widest uppercase mb-4">Key Aspects</span>
-           <h2 className="font-display text-4xl mb-4">Các phương diện bảo tồn trọng tâm</h2>
-         </div>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-           {[
-             { title: 'VĂN HÓA VẬT THỂ', desc: 'Duy trì kiến trúc nhà sàn, trang phục thổ cẩm và các công cụ lao động đặc thù. Đây là biểu tượng hữu hình của sự tồn tại dân tộc.' },
-             { title: 'VĂN HÓA PHI VẬT THỂ', desc: 'Bảo tồn các bài hát dân ca, điệu múa cổ truyền và nghi lễ cúng bái mang đậm tính nhân văn và tâm linh cộng đồng.' },
-             { title: 'NGÔN NGỮ & CHỮ VIẾT', desc: 'Hệ thống hóa và truyền dạy ngôn ngữ dân tộc cho thế hệ kế cận, coi đây là "linh hồn" của mỗi cộng đồng bản sắc.' }
-           ].map((item, i) => (
-             <div key={i} className="space-y-5 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#50C878]/30 hover:bg-white/8 transition-all duration-300">
-                <div className="w-12 h-1.5 bg-[#50C878] rounded-full shadow-lg shadow-[#50C878]/30"></div>
-                <h4 className="font-bold tracking-widest uppercase text-sm">{item.title}</h4>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-             </div>
-           ))}
-         </div>
-      </section>
-
-      <footer className="px-8 md:px-24 py-16 border-t border-white/5 mt-20 text-center">
-         <div className="space-y-4">
-            <div className="flex items-center justify-center gap-2 text-[#50C878] font-bold">
-              <span className="material-symbols-outlined text-sm">nature_people</span>
-              <span className="text-[10px] uppercase tracking-[0.3em]">Lưu trữ Văn hóa Dân tộc</span>
-            </div>
-            <div className="text-[9px] uppercase tracking-widest leading-loose text-white/40">
-              ĐỀ TÀI NGHIÊN CỨU CẤP BỘ SỐ 842/KH-VN <br/>
-              HỘI ĐỒNG BIÊN SOẠN: VIỆN KHOA HỌC XÃ HỘI VIỆT NAM <br/>
-              BẢN QUYỀN © 2024. PHỤC VỤ MỤC ĐÍCH GIÁO DỤC PHI LỢI NHUẬN.
-            </div>
-         </div>
+            <span className="font-display text-lg font-bold tracking-widest uppercase">Ethnic Archive</span>
+          </div>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-white/40">
+            © 2026 Dự án bảo tồn văn hóa dân tộc. Tất cả quyền được bảo lưu.
+          </p>
+          <div className="flex gap-6 justify-center">
+            <span className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-white/40">public</span>
+            <span className="material-symbols-outlined cursor-pointer hover:text-primary transition-colors text-white/40">share</span>
+          </div>
+        </div>
       </footer>
     </div>
   );
@@ -534,19 +789,6 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
   return (
     <div className="min-h-screen">
       {getContent()}
-      
-      {/* Mini Branding Footer */}
-      <div className="py-12 flex flex-col items-center gap-8 opacity-40 border-t border-white/5">
-         <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">account_balance</span>
-            <span className="font-display font-bold uppercase tracking-widest text-xs">Ethnic Archive</span>
-         </div>
-         <div className="text-[10px] tracking-[0.2em] uppercase">© 2024 Dự án bảo tồn văn hóa dân tộc. Tất cả quyền được bảo lưu.</div>
-         <div className="flex gap-8">
-            <span className="material-symbols-outlined cursor-pointer hover:text-primary">public</span>
-            <span className="material-symbols-outlined cursor-pointer hover:text-primary">share</span>
-         </div>
-      </div>
     </div>
   );
 };

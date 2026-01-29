@@ -355,7 +355,7 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="/Img/profile/LeVietHoangHoangHiep.jpg"
+                      src="/Img/profile/LeVietHoangHiep.jpg"
                       alt="Lê Việt Hoàng Hiệp"
                       className="w-full h-full object-cover"
                     />
@@ -372,15 +372,15 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" 
-                      alt="Thành viên 5"
+                      src="/Img/profile/MacVoAnhNhat.jpg" 
+                      alt="Mạc Võ Anh Nhật"
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-1">Tên thành viên 5</h3>
-                  <p className="text-[#F59E0B] text-sm font-semibold">Vị trí / Chức vụ</p>
+                  <h3 className="text-xl font-bold mb-1">Mạc Võ Anh Nhật</h3>
+                  <p className="text-[#F59E0B] text-sm font-semibold">Write Content / Presentation</p>
                 </div>
               </div>
 
@@ -389,15 +389,15 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&q=80&w=400" 
-                      alt="Thành viên 6"
+                      src="/Img/profile/ThaiHoc.jpg" 
+                      alt="Nguyễn Thái Học"
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-1">Tên thành viên 6</h3>
-                  <p className="text-[#F59E0B] text-sm font-semibold">Vị trí / Chức vụ</p>
+                  <h3 className="text-xl font-bold mb-1">Nguyễn Thái Học</h3>
+                  <p className="text-[#F59E0B] text-sm font-semibold">Write Content</p>
                 </div>
               </div>
             </div>
