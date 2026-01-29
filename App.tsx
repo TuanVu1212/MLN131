@@ -266,7 +266,7 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="public/img/profile/NguyenNhatChuong.jpg" 
+                      src="/Img/profile/NguyenNhatChuong.jpg" 
                       alt="Nguyễn Nhật Chương"
                       className="w-full h-full object-cover"
                     />
@@ -283,7 +283,7 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="public/img/profile/MaiHaiNam.jpg" 
+                      src="/Img/profile/MaiHaiNam.jpg" 
                       alt="Mai Hải Nam"
                       className="w-full h-full object-cover"
                     />
@@ -300,7 +300,7 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="public/img/profile/TruongTuanVu.jpg" 
+                      src="/Img/profile/TruongTuanVu.jpg" 
                       alt="Trương Tuấn Vũ"
                       className="w-full h-full object-cover"
                     />
@@ -317,7 +317,7 @@ const App: React.FC = () => {
                 <div className="relative">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#10B981] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#10B981]/30">
                     <img 
-                      src="public/img/profile/LeVietHoangHoangHiep.jpg"
+                      src="/Img/profile/LeVietHoangHoangHiep.jpg"
                       alt="Lê Việt Hoàng Hiệp"
                       className="w-full h-full object-cover"
                     />
