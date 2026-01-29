@@ -26,17 +26,15 @@ const Header: React.FC<HeaderProps> = ({ onSectionClick, onThemeToggle, isDarkMo
             { id: 'home', label: 'Home' },
             { id: 'about', label: 'Giới thiệu' },
             { id: 'development', label: 'Phát triển' },
-            { id: 'resources', label: 'Tài Nguyên' },
-            { id: 'guide', label: 'Hướng dẫn' },
             { id: 'quiz', label: 'Game Quiz' }
           ].map((item) => (
             <button 
               key={item.id} 
               onClick={() => onSectionClick?.(item.id)}
-              className={`text-sm font-semibold transition-all duration-300 pb-1 px-3 py-2 rounded-lg relative ${
+              className={`text-sm font-semibold transition-all duration-300 px-3 py-2 rounded-lg relative border-b-2 ${
                 activeSection === item.id 
-                  ? 'text-primary bg-primary/10 shadow-lg shadow-primary/20 border-b-2 border-primary' 
-                  : 'text-[#E5E7EB] hover:text-primary hover:bg-white/5 hover:shadow-md'
+                  ? 'text-primary bg-primary/10 shadow-lg shadow-primary/20 border-primary' 
+                  : 'text-[#E5E7EB] hover:text-primary hover:bg-white/5 hover:shadow-md border-transparent'
               }`}
             >
               {item.label}

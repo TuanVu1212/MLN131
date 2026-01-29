@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import ContentCard from './components/ContentCard';
 import Footer from './components/Footer';
 import DetailPage from './components/DetailPage';
+import GameQuiz from './components/GameQuiz';
 import { SECTIONS } from './constants';
 import { Section } from './types';
 
@@ -12,6 +13,7 @@ const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
   const [activeMenuSection, setActiveMenuSection] = useState<string>('home');
+  const [showQuiz, setShowQuiz] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -54,6 +56,43 @@ const App: React.FC = () => {
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
+  // Quiz View
+  if (showQuiz) {
+    return (
+      <div className="min-h-screen transition-colors duration-500 bg-[#F4F1EA] dark:bg-[#1A1816]">
+        <Header 
+          onSectionClick={(id) => {
+            if (id === 'quiz') {
+              setShowQuiz(true);
+            } else {
+              setShowQuiz(false);
+              setActiveMenuSection(id);
+              if (id === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else if (id === 'about') {
+                setTimeout(() => {
+                  document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              } else if (id === 'development') {
+                setTimeout(() => {
+                  document.getElementById('development-section')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }
+            }
+          }} 
+          onThemeToggle={toggleTheme}
+          isDarkMode={isDarkMode}
+          activeSection="quiz"
+        />
+        <GameQuiz onBackToHome={() => {
+          setShowQuiz(false);
+          setActiveMenuSection('home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} />
+      </div>
+    );
+  }
+
   // Home View
   if (!activeSectionId) {
     return (
@@ -61,19 +100,18 @@ const App: React.FC = () => {
         <Header 
           onSectionClick={(id) => {
             // Handle smooth scroll or navigation
-            setActiveMenuSection(id);
-            if (id === 'home') {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (id === 'about') {
-              document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
-            } else if (id === 'development') {
-              document.getElementById('development-section')?.scrollIntoView({ behavior: 'smooth' });
-            } else if (id === 'resources') {
-              // Resources section - coming soon
-            } else if (id === 'guide') {
-              // Handle guide section
-            } else if (id === 'quiz') {
-              // Handle quiz section
+            if (id === 'quiz') {
+              setShowQuiz(true);
+              setActiveMenuSection('quiz');
+            } else {
+              setActiveMenuSection(id);
+              if (id === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else if (id === 'about') {
+                document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
+              } else if (id === 'development') {
+                document.getElementById('development-section')?.scrollIntoView({ behavior: 'smooth' });
+              }
             }
           }} 
           onThemeToggle={toggleTheme}
@@ -130,10 +168,10 @@ const App: React.FC = () => {
               </div>
 
               <div className="relative group">
-                <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-[#33302E]/10 dark:border-[#EAE6DF]/10 transition-all duration-500 group-hover:shadow-primary/30">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-[#33302E]/10 dark:border-[#EAE6DF]/10 transition-all duration-500 group-hover:shadow-primary/30 max-h-[400px]">
                   <img 
                     src="https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=1000" 
-                    className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                     alt="Ethnic Archive Game"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>

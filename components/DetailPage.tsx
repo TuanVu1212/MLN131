@@ -34,82 +34,286 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
       </nav>
 
       {/* Main Hero */}
-      <section className="px-8 md:px-24 py-12 mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-[10px] uppercase mb-6 font-bold tracking-[0.3em]">CHƯƠNG I • CƠ SỞ LÝ LUẬN</span>
-            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mb-6">
-              Phần I: Khái quát về <br/>
-              <span className="text-primary italic font-light">Dân tộc và Văn hóa</span>
-            </h1>
-            <p className="text-lg text-white/60 max-w-lg mb-12 leading-relaxed">
-              Khám phá những nền tảng tri thức về sự hình thành cộng đồng và bản sắc văn hóa trong dòng chảy lịch sử dân tộc.
-            </p>
-
-            <div className="space-y-6">
-              <h2 className="text-2xl font-display mb-6">01. Quan niệm về dân tộc từ góc độ <span className="text-primary italic font-serif">Chủ nghĩa xã hội khoa học</span></h2>
-              <p className="text-white/50 mb-8 leading-relaxed">
-                Dân tộc là một cộng đồng người ổn định được hình thành trong lịch sử trên cơ sở những mối liên hệ chặt chẽ về kinh tế, lãnh thổ, ngôn ngữ, văn hóa và tâm lý dân tộc...
-              </p>
+      <section className="px-8 md:px-24 py-24 mt-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <div className="mb-10 text-center">
+              <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg font-bold tracking-[0.2em] mb-8">PHẦN MỞ ĐẦU</span>
+              <h1 className="font-display text-6xl md:text-8xl leading-tight mb-4">
+                KHÁI QUÁT VỀ<br/>
+                DÂN TỘC VÀ VĂN HÓA
+              </h1>
               
-              <div className="space-y-3">
-                {[
-                  { icon: 'public', title: 'LÃNH THỔ & KINH TẾ', desc: 'Cộng đồng về địa giới và sự thống nhất các quan hệ kinh tế.' },
-                  { icon: 'language', title: 'NGÔN NGỮ CHUNG', desc: 'Sự thống nhất về tiếng nói dùng làm công cụ giao tiếp xã hội.' },
-                  { icon: 'groups', title: 'TÂM LÝ & BẢN SẮC', desc: 'Đặc điểm tâm lý và di sản văn hóa đặc thù riêng biệt.' }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 hover:bg-white/8 transition-all duration-300 cursor-default group">
-                    <div className="bg-primary/10 p-2.5 rounded-lg text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
-                      <span className="material-symbols-outlined">{item.icon}</span>
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-bold tracking-widest text-primary mb-1.5 uppercase">{item.title}</h4>
-                      <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-2 relative h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-              <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" alt="Ethnic" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 px-4 py-2 bg-black/50 backdrop-blur-sm rounded-lg border border-white/10">
-                <span className="text-[10px] tracking-widest uppercase text-white/70">Nếp sống cộng đồng vùng cao Việt Nam</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - Section 01 */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-display text-5xl text-primary">01.</span>
+                <div>
+                  <h2 className="text-3xl font-display font-bold">Khái niệm Dân tộc</h2>
+                  <p className="text-white/50 text-sm mt-1">"Hồn cốt" của thực thể</p>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <p className="text-white/50 text-sm leading-relaxed mb-4">
+                Dân tộc không chỉ là ranh giới địa lý hay một thực thể kinh tế. Dân tộc là sự thống nhất của 4 yếu tố cơ bản:
+                </p>
+                  
+                <div className="space-y-3">
+                  {[
+                    { icon: 'public', title: 'LÃNH THỔ', desc: 'Ranh giới địa lý là "thân xác" của dân tộc - nơi cộng đồng sinh sống và phát triển.' },
+                    { icon: 'language', title: 'NGÔN NGỮ', desc: 'Công cụ giao tiếp và lưu giữ tri thức, tạo nên sự thống nhất trong cộng đồng.' },
+                    { icon: 'account_balance', title: 'KINH TẾ', desc: 'Sự thống nhất về các quan hệ kinh tế, tạo nền tảng vật chất cho sự tồn tại.' },
+                    { icon: 'favorite', title: 'TÂM LÝ / VĂN HÓA', desc: 'Văn hóa là "tâm hồn" - hệ điều hành tâm lý kết nối các thành viên dân tộc.' }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 hover:bg-white/8 transition-all duration-300 cursor-default group">
+                      <div className="bg-primary/10 p-2.5 rounded-lg text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                        <span className="material-symbols-outlined">{item.icon}</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold tracking-widest text-primary mb-1.5 uppercase">{item.title}</h4>
+                        <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 p-5 bg-primary/5 border border-primary/20 rounded-xl">
+                  <p className="text-sm text-white/70 italic leading-relaxed">
+                    💡 <span className="text-primary font-semibold">Vị trí của văn hóa:</span> Văn hóa không đứng ngoài dân tộc - nó chính là "hệ điều hành" tâm lý kết nối các thành viên. Nếu lãnh thổ là thân xác, thì văn hóa là tâm hồn.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="h-48 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
-               <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Nature" />
-            </div>
-            <div className="h-48 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center p-8 border border-primary/20 shadow-lg">
-               <div className="opacity-60"><span className="material-symbols-outlined text-primary text-6xl">spa</span></div>
+
+            {/* Right Column - Section 02 */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-display text-5xl text-primary">02.</span>
+                <h2 className="text-3xl font-display font-bold">Mối quan hệ biện chứng</h2>
+              </div>
+              
+              <div className="space-y-6">
+                <p className="text-white/50 text-sm leading-relaxed">
+                  Trong thời kỳ quá độ lên CNXH, phát triển kinh tế mà đánh mất văn hóa chính là sự <span className="text-primary font-semibold">"phát triển què quặt"</span>. Văn hóa chính là <span className="text-primary font-semibold">Căn cước tinh thần</span> giúp một dân tộc tồn tại độc lập trên bản đồ thế giới.
+                </p>
+                
+                <div className="bg-gradient-to-br from-forest/30 to-forest/10 p-8 rounded-2xl relative overflow-hidden group border border-primary/20 shadow-2xl">
+                   <div className="absolute top-2 left-2 opacity-10 pointer-events-none">
+                     <span className="material-symbols-outlined text-6xl text-primary font-bold">format_quote</span>
+                   </div>
+                   <p className="text-lg md:text-xl font-display italic text-white leading-snug relative z-10">
+                     "Văn hóa là căn cước của dân tộc. Một dân tộc mất đi bản sắc văn hóa của mình cũng chính là lúc dân tộc đó không còn tồn tại với tư cách một cộng đồng độc lập."
+                   </p>
+                   <div className="h-0.5 w-16 bg-primary/50 mt-6 rounded-full"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Relation Section */}
+      {/* Part 1: Theoretical Foundation */}
       <section className="px-8 md:px-24 py-24 border-t border-white/10">
-         <div className="text-center max-w-4xl mx-auto space-y-10">
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-[0.3em]">02</span>
-            <h2 className="font-display text-4xl md:text-6xl leading-tight">Mối quan hệ biện chứng giữa <br/> Dân tộc và Văn hóa</h2>
-            <p className="text-white/50 text-base leading-relaxed">
-              Văn hóa là linh hồn của dân tộc, là tấm gương phản chiếu hành trình lịch sử và tâm thế của một cộng đồng. Mối quan hệ này mang tính hữu cơ: Dân tộc là chủ thể sáng tạo văn hóa, đồng thời văn hóa là dấu hiệu nhận diện đặc trưng nhất.
-            </p>
-            
-            <div className="bg-gradient-to-br from-forest/30 to-forest/10 p-12 md:p-16 rounded-3xl relative overflow-hidden group border border-primary/20 shadow-2xl">
-               <div className="absolute top-4 left-4 opacity-10 pointer-events-none">
-                 <span className="material-symbols-outlined text-8xl text-primary font-bold">format_quote</span>
-               </div>
-               <p className="text-xl md:text-3xl font-display italic text-white leading-snug relative z-10">
-                 "Văn hóa là căn cước của dân tộc. Một dân tộc mất đi bản sắc văn hóa của mình cũng chính là lúc dân tộc đó không còn tồn tại với tư cách một cộng đồng độc lập."
-               </p>
-               <div className="h-1 w-20 bg-primary/50 mx-auto mt-10 rounded-full"></div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 space-y-6">
+            <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg font-bold tracking-[0.2em]">PHẦN 1 • CƠ SỞ LÝ LUẬN</span>
+            <h2 className="font-display text-5xl md:text-7xl leading-tight">
+              Những cột trụ của <br/>sự <span className="text-primary">tồn tại</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - Two Trends */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-display text-5xl text-primary">01.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Hai xu hướng khách quan</h3>
+                  <p className="text-white/50 text-sm mt-2">Vũ điệu giữa "Bản sắc" và "Liên hiệp"</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                      <span className="material-symbols-outlined text-lg">shield</span>
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold mb-2">Xu hướng 1: Khát vọng tự khẳng định</h4>
+                      <p className="text-white/50 text-xs leading-relaxed mb-2">
+                        Các dân tộc muốn tách ra để giữ gìn bản sắc riêng.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pl-13">
+                    <p className="text-[11px] text-white/40 italic leading-relaxed">
+                      <span className="text-primary">Ví dụ:</span> Cách người Tây Nguyên tinh chỉnh âm thanh chiếc Chiêng Mẹ để khẳng định "tôi là duy nhất".
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                      <span className="material-symbols-outlined text-lg">public</span>
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold mb-2">Xu hướng 2: Sức hút của sự hòa hợp</h4>
+                      <p className="text-white/50 text-xs leading-relaxed mb-2">
+                        Nhu cầu hội nhập, xích lại gần nhau để cùng tiến bộ trong thời đại 4.0.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-xl">
+                  <p className="text-base text-white/80 leading-relaxed">
+                    <span className="text-primary font-bold text-lg">➜ Kết luận:</span> Bảo tồn Cồng chiêng chính là điểm giao thoa: Chúng ta hội nhập (xu hướng 2) nhưng không được để hòa tan (xu hướng 1).
+                  </p>
+                </div>
+              </div>
             </div>
-         </div>
+
+            {/* Right Column - Lenin's Program */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-display text-5xl text-primary">02.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Cương lĩnh dân tộc của V.I. Lênin</h3>
+                  <p className="text-white/50 text-sm mt-2">Bản tuyên ngôn công bằng</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                      <span className="material-symbols-outlined text-sm">balance</span>
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold mb-2 text-primary">Bình đẳng dân tộc</h4>
+                      <p className="text-white/50 text-sm leading-relaxed">
+                        Không có nền văn hóa nào là "thượng đẳng" hay "hạ đẳng". Văn hóa Tây Nguyên có giá trị ngang hàng với bất kỳ nền văn hóa nào khác.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                      <span className="material-symbols-outlined text-sm">how_to_vote</span>
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold mb-2 text-primary">Quyền tự quyết</h4>
+                      <p className="text-white/50 text-sm leading-relaxed">
+                        Tôn trọng quyền của người DTTS trong việc bảo giữ di sản chính là tôn trọng nhân phẩm dân tộc.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-8 bg-gradient-to-br from-forest/30 to-forest/10 rounded-2xl border border-primary/20">
+                  <div className="flex items-start gap-4">
+                    <span className="material-symbols-outlined text-primary text-4xl">verified</span>
+                    <div>
+                      <p className="text-base text-white/80 leading-relaxed italic">
+                        Cương lĩnh này khẳng định: Mọi dân tộc đều có quyền được tôn trọng và phát triển bản sắc văn hóa riêng của mình.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      {/* Part 2: Necessity of Preservation */}
+      <section className="px-8 md:px-24 py-24 border-t border-white/10 bg-gradient-to-b from-transparent to-black/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 space-y-6">
+            <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg font-bold tracking-[0.2em]">PHẦN 2 • TÍNH TẤT YẾU</span>
+            <h2 className="font-display text-5xl md:text-7xl leading-tight">
+              "Hộ chiếu" <span className="text-primary">văn hóa</span>
+            </h2>
+            <p className="text-white/50 text-lg max-w-3xl mx-auto leading-relaxed">
+              Bảo tồn văn hóa không chỉ là nhiệm vụ - đó là sự tồn vong của dân tộc trong làn sóng toàn cầu hóa.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* Section 1: Characteristics of Vietnamese Ethnic Groups */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">01.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Đặc điểm dân tộc Việt Nam - Bức tranh ghép hình rực rỡ</h3>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">diversity_3</span>
+                  </div>
+                  <p className="text-white/70 text-base leading-relaxed pt-2">
+                    Việt Nam là quốc gia đa dân tộc với truyền thống đoàn kết, nhưng trình độ phát triển không đồng đều. Sự chênh lệch này khiến văn hóa dân tộc thiểu số dễ bị tổn thương nhất trước làn sóng đô thị hóa. Bảo tồn văn hóa là nhiệm vụ chiến lược để xây dựng khối đại đoàn kết dân tộc bền vững.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 2: Harsh Reality */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-5xl text-primary">02.</span>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">Thực tiễn nghiệt ngã</h3>
+                  <p className="text-white/50 text-sm mt-2">Cơn lốc của "Sự đồng hóa tự nguyện"</p>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center text-red-400 shadow-lg flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">warning</span>
+                  </div>
+                  <p className="text-white/70 text-base leading-relaxed pt-2">
+                    Trong thời kỳ hội nhập, văn hóa dân tộc thiểu số đang đối mặt với nguy cơ mai một không phải bởi sự ép buộc, mà bởi sự đồng hóa tự nguyện. Hội nhập mang đến tiện nghi, công nghệ và âm nhạc đại chúng, nhưng đồng thời làm thu hẹp không gian văn hóa truyền thống như nhà rông, nhà dài, khiến tiếng cồng chiêng dần xa rời đời sống của thế hệ trẻ.
+                  </p>
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="p-8 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shadow-lg flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">lightbulb</span>
+                  </div>
+                  <div className="pt-2">
+                    <h4 className="text-lg font-bold mb-3 text-primary">Thông điệp</h4>
+                    <p className="text-white/70 text-base leading-relaxed">
+                      <span className="text-primary font-bold">Mất văn hóa là mất căn cước.</span> Ta có thể sống hiện đại, nhưng trái tim vẫn phải rung động trước giá trị truyền thống. Đó chính là <span className="text-primary font-bold">"tấm hộ chiếu"</span> để hội nhập mà không đánh mất chính mình.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-8 py-8 border-t border-white/10 text-center">
+        <p className="text-white/40 text-sm">© 2024 Ethnic Archive. Bảo tồn bản sắc giữa dòng chảy hội nhập.</p>
+      </footer>
 
     </div>
   );
