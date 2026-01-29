@@ -84,11 +84,14 @@ const App: React.FC = () => {
           isDarkMode={isDarkMode}
           activeSection="quiz"
         />
-        <GameQuiz onBackToHome={() => {
-          setShowQuiz(false);
-          setActiveMenuSection('home');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }} />
+        <GameQuiz 
+          isDarkMode={isDarkMode}
+          onBackToHome={() => {
+            setShowQuiz(false);
+            setActiveMenuSection('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }} 
+        />
       </div>
     );
   }
@@ -206,7 +209,7 @@ const App: React.FC = () => {
                 {/* Milestone 1 */}
                 <div className="flex gap-10 items-start relative">
                   <div className="text-[#F59E0B] font-bold text-sm min-w-[85px] text-right pt-1.5">
-                    11/09/2025
+                    10/01/2026
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#10B981] border-4 border-[#F4F1EA] dark:border-[#1A1816] flex items-center justify-center z-10 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-[#10B981]/50 cursor-pointer animate-pulse">
                     <span className="material-symbols-outlined text-white text-lg">lightbulb</span>
@@ -222,7 +225,7 @@ const App: React.FC = () => {
                 {/* Milestone 2 */}
                 <div className="flex gap-10 items-start relative">
                   <div className="text-[#F59E0B] font-bold text-sm min-w-[85px] text-right pt-1.5">
-                    15/09/2025
+                    17/01/2026
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#10B981] border-4 border-[#F4F1EA] dark:border-[#1A1816] flex items-center justify-center z-10 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-[#10B981]/50 cursor-pointer animate-pulse">
                     <span className="material-symbols-outlined text-white text-lg">draw</span>
@@ -238,7 +241,7 @@ const App: React.FC = () => {
                 {/* Milestone 3 */}
                 <div className="flex gap-10 items-start relative">
                   <div className="text-[#F59E0B] font-bold text-sm min-w-[85px] text-right pt-1.5">
-                    20/09/2025
+                    21/01/2026
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#10B981] border-4 border-[#F4F1EA] dark:border-[#1A1816] flex items-center justify-center z-10 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-[#10B981]/50 cursor-pointer animate-pulse">
                     <span className="material-symbols-outlined text-white text-lg">science</span>
@@ -254,7 +257,7 @@ const App: React.FC = () => {
                 {/* Milestone 4 */}
                 <div className="flex gap-10 items-start relative">
                   <div className="text-[#F59E0B] font-bold text-sm min-w-[85px] text-right pt-1.5">
-                    23/09/2025
+                    25/01/2026
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#10B981] border-4 border-[#F4F1EA] dark:border-[#1A1816] flex items-center justify-center z-10 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-[#10B981]/50 cursor-pointer animate-pulse">
                     <span className="material-symbols-outlined text-white text-lg">group_add</span>
@@ -270,7 +273,7 @@ const App: React.FC = () => {
                 {/* Milestone 5 */}
                 <div className="flex gap-10 items-start relative">
                   <div className="text-[#F59E0B] font-bold text-sm min-w-[85px] text-right pt-1.5">
-                    01/10/2025
+                    30/01/2026
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#10B981] border-4 border-[#F4F1EA] dark:border-[#1A1816] flex items-center justify-center z-10 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-[#10B981]/50 cursor-pointer animate-pulse">
                     <span className="material-symbols-outlined text-white text-lg">rocket_launch</span>
