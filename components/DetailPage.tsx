@@ -239,7 +239,7 @@ const DetailPage: React.FC<DetailPageProps> = ({ sectionId, onBack, onNavigate }
       <section className="px-8 md:px-24 py-24 border-t border-white/10 bg-gradient-to-b from-transparent to-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-6">
-            <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg font-bold tracking-[0.2em]">PHẦN 2 • TÍNH TẤT YẾU</span>
+            <span className="inline-block px-6 py-3 bg-primary/10 text-primary rounded-full text-base md:text-lg font-bold tracking-[0.2em]">PHẦN 2 • TÍNH TẤT YẾU CỦA VIỆC BẢO TỒN</span>
             <h2 className="font-display text-5xl md:text-7xl leading-tight">
               "Hộ chiếu" <span className="text-primary">văn hóa</span>
             </h2>

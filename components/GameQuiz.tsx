@@ -371,24 +371,24 @@ const GameQuiz: React.FC<GameQuizProps> = ({ onBackToHome }) => {
 
           {/* Explanation */}
           {showExplanation && (
-            <div className="bg-[#1A3A2A] border border-[#10B981]/30 rounded-md p-4 mb-5">
-              <div className="flex items-start gap-2.5">
-                <span className="text-[#10B981] text-lg flex-shrink-0">💡</span>
+            <div className="bg-[#1A3A2A] border border-[#10B981]/30 rounded-md p-3 mb-4">
+              <div className="flex items-start gap-2">
+                <span className="text-[#10B981] text-base flex-shrink-0">💡</span>
                 <div className="flex-1">
-                  <h3 className="font-medium text-[#10B981] mb-1.5 text-sm">Giải thích:</h3>
-                  <p className="text-white text-sm leading-relaxed">{currentQuestion.explanation}</p>
+                  <h3 className="font-medium text-[#10B981] mb-1 text-sm">Giải thích:</h3>
+                  <p className="text-white text-xs leading-relaxed">{currentQuestion.explanation}</p>
                 </div>
               </div>
             </div>
           )}
 
           {/* Action Buttons */}
-          <div className="flex gap-2.5">
+          <div className="flex gap-2">
             {!showExplanation ? (
               <button
                 onClick={handleSubmitAnswer}
                 disabled={selectedAnswer === null}
-                className={`flex-1 font-medium py-3 px-6 rounded-md text-base transition-all duration-200 ${
+                className={`flex-1 font-medium py-2.5 px-5 rounded-md text-sm transition-all duration-200 ${
                   selectedAnswer === null
                     ? 'bg-[#3A3A3A] text-gray-500 cursor-not-allowed'
                     : 'bg-[#10B981] hover:bg-[#059669] text-white'
@@ -399,7 +399,7 @@ const GameQuiz: React.FC<GameQuizProps> = ({ onBackToHome }) => {
             ) : (
               <button
                 onClick={handleNextQuestion}
-                className="flex-1 bg-[#10B981] hover:bg-[#059669] text-white font-medium py-3 px-6 rounded-md text-base transition-all duration-200"
+                className="flex-1 bg-[#10B981] hover:bg-[#059669] text-white font-medium py-2.5 px-5 rounded-md text-sm transition-all duration-200"
               >
                 {currentQuestionIndex < questions.length - 1 ? 'Câu tiếp theo →' : 'Xem kết quả 🏆'}
               </button>
