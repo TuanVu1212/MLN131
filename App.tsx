@@ -6,6 +6,7 @@ import ContentCard from './components/ContentCard';
 import Footer from './components/Footer';
 import DetailPage from './components/DetailPage';
 import GameQuiz from './components/GameQuiz';
+import Guide from './components/Guide';
 import { SECTIONS } from './constants';
 import { Section } from './types';
 
@@ -14,6 +15,7 @@ const App: React.FC = () => {
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
   const [activeMenuSection, setActiveMenuSection] = useState<string>('home');
   const [showQuiz, setShowQuiz] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -29,7 +31,7 @@ const App: React.FC = () => {
       const sections = [
         { id: 'home', element: document.getElementById('hero-section') },
         { id: 'about', element: document.getElementById('about-section') },
-        { id: 'development', element: document.getElementById('development-section') }
+        { id: 'roadmap', element: document.getElementById('roadmap-section') }
       ];
 
       const scrollPosition = window.scrollY + 100;
@@ -56,6 +58,43 @@ const App: React.FC = () => {
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
+  // Guide View
+  if (showGuide) {
+    return (
+      <div className="min-h-screen transition-colors duration-500 bg-[#F4F1EA] dark:bg-[#1A1816]">
+        <Header 
+          onSectionClick={(id) => {
+            if (id === 'quiz') {
+              setShowGuide(false);
+              setShowQuiz(true);
+              setActiveMenuSection('quiz');
+            } else if (id === 'guide') {
+              setShowGuide(true);
+            } else {
+              setShowGuide(false);
+              setActiveMenuSection(id);
+              if (id === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else if (id === 'about') {
+                setTimeout(() => {
+                  document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              } else if (id === 'roadmap') {
+                setTimeout(() => {
+                  document.getElementById('roadmap-section')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }
+            }
+          }} 
+          onThemeToggle={toggleTheme}
+          isDarkMode={isDarkMode}
+          activeSection="guide"
+        />
+        <Guide isDarkMode={isDarkMode} />
+      </div>
+    );
+  }
+
   // Quiz View
   if (showQuiz) {
     return (
@@ -64,6 +103,10 @@ const App: React.FC = () => {
           onSectionClick={(id) => {
             if (id === 'quiz') {
               setShowQuiz(true);
+            } else if (id === 'guide') {
+              setShowQuiz(false);
+              setShowGuide(true);
+              setActiveMenuSection('guide');
             } else {
               setShowQuiz(false);
               setActiveMenuSection(id);
@@ -73,9 +116,9 @@ const App: React.FC = () => {
                 setTimeout(() => {
                   document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
-              } else if (id === 'development') {
+              } else if (id === 'roadmap') {
                 setTimeout(() => {
-                  document.getElementById('development-section')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('roadmap-section')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
               }
             }
@@ -106,14 +149,17 @@ const App: React.FC = () => {
             if (id === 'quiz') {
               setShowQuiz(true);
               setActiveMenuSection('quiz');
+            } else if (id === 'guide') {
+              setShowGuide(true);
+              setActiveMenuSection('guide');
             } else {
               setActiveMenuSection(id);
               if (id === 'home') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               } else if (id === 'about') {
                 document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
-              } else if (id === 'development') {
-                document.getElementById('development-section')?.scrollIntoView({ behavior: 'smooth' });
+              } else if (id === 'roadmap') {
+                document.getElementById('roadmap-section')?.scrollIntoView({ behavior: 'smooth' });
               }
             }
           }} 
@@ -142,7 +188,7 @@ const App: React.FC = () => {
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-widest uppercase mb-4">About Us</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                VỀ <span className="text-[#F59E0B]">CULTURAL PRESERVATION</span>
+                VỀ <span className="text-[#F59E0B]">CULTURAL CHESS</span>
               </h2>
               <p className="text-base text-[#33302E]/70 dark:text-[#EAE6DF]/60 max-w-2xl mx-auto">
                 Câu chuyện, giá trị và tầm nhìn của chúng tôi.
@@ -156,7 +202,7 @@ const App: React.FC = () => {
                     Câu chuyện hình thành
                   </h3>
                   <p className="text-base leading-relaxed text-[#33302E]/80 dark:text-[#EAE6DF]/70">
-                    <strong>Cultural Preservation</strong> ra đời từ mong muốn tạo ra một nền tảng tri thức, nơi người dùng có thể vừa giải trí, vừa cũng có kiến thức qua những câu hỏi thử thách. Đây không chỉ là một dự án, mà là một hành trình chính phục đỉnh cao tri thức.
+                    <strong>Cultural Chess</strong> ra đời từ mong muốn tạo ra một nền tảng tri thức, nơi người dùng có thể vừa giải trí, vừa cũng có kiến thức qua những câu hỏi thử thách. Đây không chỉ là một dự án, mà là một hành trình chính phục đỉnh cao tri thức.
                   </p>
                 </div>
 
@@ -173,16 +219,21 @@ const App: React.FC = () => {
               <div className="relative group">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-[#33302E]/10 dark:border-[#EAE6DF]/10 transition-all duration-500 group-hover:shadow-primary/30 max-h-[400px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=1000" 
+                    src="/Img/profile/chess.jpg" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                      alt="Cultural Preservation Game"
+                      alt="Cultural Chess Game"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <button className="w-full bg-primary hover:bg-[#F59E0B] text-white font-bold py-4 px-8 rounded-xl text-lg transition-all hover:scale-[1.02] shadow-2xl hover:shadow-primary/50 flex items-center justify-center gap-2">
+                    <a 
+                      href="https://v0-le-nin-chess-backup.vercel.app/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full bg-primary hover:bg-[#F59E0B] text-white font-bold py-4 px-8 rounded-xl text-lg transition-all hover:scale-[1.02] shadow-2xl hover:shadow-primary/50 flex items-center justify-center gap-2"
+                    >
                       <span className="material-symbols-outlined">play_circle</span>
                       Chơi Ngay
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -190,7 +241,7 @@ const App: React.FC = () => {
           </section>
 
           {/* Development Roadmap Section */}
-          <section id="development-section" className="mt-16 py-10 scroll-mt-20">
+          <section id="roadmap-section" className="mt-16 py-10 scroll-mt-20">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-2 bg-[#10B981]/10 text-[#10B981] rounded-full text-xs font-bold tracking-widest uppercase mb-4">Roadmap</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
@@ -217,7 +268,7 @@ const App: React.FC = () => {
                   <div className="flex-1 pt-0.5">
                     <h3 className="text-xl font-bold mb-1.5">Ý tưởng</h3>
                     <p className="text-sm text-[#33302E]/70 dark:text-[#EAE6DF]/60">
-                      Hình thành khái niệm "Cultural Preservation" & Phân tích Data.
+                      Hình thành khái niệm "Cultural Chess" & Phân tích Data.
                     </p>
                   </div>
                 </div>
@@ -410,9 +461,9 @@ const App: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                   <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase">Giá trị cốt lõi</span>
-                  <h2 className="font-display text-4xl leading-tight">Mỗi hiện vật là một câu chuyện chưa kể</h2>
+                  <h2 className="font-display text-4xl leading-tight">Bảo tồn bản sắc - Gìn giữ tương lai</h2>
                   <p className="text-[#33302E]/70 dark:text-[#EAE6DF]/60 leading-relaxed text-lg">
-                      Chúng tôi không chỉ lưu trữ dữ liệu, chúng tôi lưu giữ linh hồn của các dân tộc. Từ những đường kim mũi chỉ trên tà áo dài của người Mông đến những điệu múa xòe rộn rã của người Thái.
+                      Chúng tôi không chỉ lưu giữ kiến thức, chúng tôi bảo tồn linh hồn văn hóa của 54 dân tộc Việt Nam. Từ những nền tảng lý luận về đại đoàn kết dân tộc, qua các lễ hội truyền thống độc đáo như Xòe Thái, Ok Om Bok, đến chính sách phát triển bền vững - mỗi nội dung là một mảnh ghép trong bức tranh bảo tồn văn hóa dân tộc.
                   </p>
                   <div className="flex gap-4">
                      <div className="p-4 bg-primary/10 rounded-lg">
@@ -420,8 +471,8 @@ const App: React.FC = () => {
                         <span className="text-[10px] uppercase tracking-widest opacity-60">Dân tộc</span>
                      </div>
                      <div className="p-4 bg-primary/10 rounded-lg">
-                        <span className="block text-2xl font-bold text-primary">1k+</span>
-                        <span className="text-[10px] uppercase tracking-widest opacity-60">Di sản số</span>
+                        <span className="block text-2xl font-bold text-primary">3</span>
+                        <span className="text-[10px] uppercase tracking-widest opacity-60">Nội dung</span>
                      </div>
                   </div>
               </div>
@@ -429,7 +480,7 @@ const App: React.FC = () => {
                   <img 
                       src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&q=80&w=1000" 
                       className="w-full h-full object-cover" 
-                      alt="Vietnamese Ethnic Craft"
+                      alt="Vietnamese Ethnic Culture"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-background-dark/80 to-transparent"></div>
                   </div>

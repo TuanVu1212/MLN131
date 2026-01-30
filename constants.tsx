@@ -34,3 +34,11 @@ export const APP_CONFIG = {
   quote: '"Cái gốc của một dân tộc chính là văn hóa. Mất văn hóa là mất tất cả."',
   footerDescription: 'Nỗ lực số hóa và lưu giữ những giá trị văn hóa độc bản của các dân tộc thiểu số Việt Nam trong thời đại số.'
 };
+
+export const MENU_ITEMS = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'Giới thiệu' },
+  { id: 'roadmap', label: 'Phát triển' },
+  { id: 'guide', label: 'Hướng dẫn' },
+  { id: 'quiz', label: 'Game Quiz' }
+];

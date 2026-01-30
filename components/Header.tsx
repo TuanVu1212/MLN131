@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { APP_CONFIG } from '../constants';
+import { APP_CONFIG, MENU_ITEMS } from '../constants';
 
 interface HeaderProps {
   onSectionClick?: (id: string) => void;
@@ -28,12 +28,7 @@ const Header: React.FC<HeaderProps> = ({ onSectionClick, onThemeToggle, isDarkMo
           </span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          {[
-            { id: 'home', label: 'Home' },
-            { id: 'about', label: 'Giới thiệu' },
-            { id: 'development', label: 'Phát triển' },
-            { id: 'quiz', label: 'Game Quiz' }
-          ].map((item) => (
+          {MENU_ITEMS.map((item) => (
             <button 
               key={item.id} 
               onClick={() => onSectionClick?.(item.id)}
