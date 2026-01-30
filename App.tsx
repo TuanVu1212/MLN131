@@ -142,7 +142,7 @@ const App: React.FC = () => {
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-widest uppercase mb-4">About Us</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                VỀ <span className="text-[#F59E0B]">ETHNIC ARCHIVE</span>
+                VỀ <span className="text-[#F59E0B]">CULTURAL PRESERVATION</span>
               </h2>
               <p className="text-base text-[#33302E]/70 dark:text-[#EAE6DF]/60 max-w-2xl mx-auto">
                 Câu chuyện, giá trị và tầm nhìn của chúng tôi.
@@ -156,7 +156,7 @@ const App: React.FC = () => {
                     Câu chuyện hình thành
                   </h3>
                   <p className="text-base leading-relaxed text-[#33302E]/80 dark:text-[#EAE6DF]/70">
-                    <strong>Ethnic Archive</strong> ra đời từ mong muốn tạo ra một nền tảng tri thức, nơi người dùng có thể vừa giải trí, vừa cũng có kiến thức qua những câu hỏi thử thách. Đây không chỉ là một dự án, mà là một hành trình chính phục đỉnh cao tri thức.
+                    <strong>Cultural Preservation</strong> ra đời từ mong muốn tạo ra một nền tảng tri thức, nơi người dùng có thể vừa giải trí, vừa cũng có kiến thức qua những câu hỏi thử thách. Đây không chỉ là một dự án, mà là một hành trình chính phục đỉnh cao tri thức.
                   </p>
                 </div>
 
@@ -175,7 +175,7 @@ const App: React.FC = () => {
                   <img 
                     src="https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=1000" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    alt="Ethnic Archive Game"
+                      alt="Cultural Preservation Game"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">
@@ -217,7 +217,7 @@ const App: React.FC = () => {
                   <div className="flex-1 pt-0.5">
                     <h3 className="text-xl font-bold mb-1.5">Ý tưởng</h3>
                     <p className="text-sm text-[#33302E]/70 dark:text-[#EAE6DF]/60">
-                      Hình thành khái niệm "Ethnic Archive" & Phân tích Data.
+                      Hình thành khái niệm "Cultural Preservation" & Phân tích Data.
                     </p>
                   </div>
                 </div>
@@ -450,6 +450,7 @@ const App: React.FC = () => {
         sectionId={activeSectionId} 
         onBack={() => setActiveSectionId(null)}
         onNavigate={(id) => setActiveSectionId(id)}
+        isDarkMode={isDarkMode}
       />
     </div>
   );

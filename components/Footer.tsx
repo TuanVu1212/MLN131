@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <div className="bg-primary/20 p-2 rounded-lg shadow border border-primary/20">
                 <span className="material-symbols-outlined text-primary text-2xl">account_balance</span>
               </div>
-              <span className="font-display font-bold text-2xl">Ethnic Archive</span>
+              <span className="font-display font-bold text-2xl">Cultural Preservation</span>
             </div>
             <p className="text-[#33302E]/70 dark:text-[#A3A3A3] text-sm max-w-sm leading-relaxed">
               {APP_CONFIG.footerDescription}
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               <a className="w-10 h-10 rounded-full bg-[#33302E]/5 dark:bg-white/5 flex items-center justify-center text-[#33302E]/40 dark:text-[#A3A3A3] hover:bg-primary/20 hover:text-primary transition-all hover:scale-110" href="#"><span className="material-symbols-outlined text-lg">public</span></a>
             </div>
             <p className="text-[#33302E]/40 dark:text-[#A3A3A3] text-[10px] tracking-widest uppercase">
-              © 2026 Ethnic Archive. Preserve the Past, Inspire the Future.
+              © 2026 Cultural Preservation. Preserve the Past, Inspire the Future.
             </p>
           </div>
         </div>

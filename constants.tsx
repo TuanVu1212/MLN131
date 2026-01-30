@@ -29,7 +29,7 @@ export const SECTIONS: Section[] = [
 ];
 
 export const APP_CONFIG = {
-  appName: 'Ethnic Archive',
+  appName: 'Cultural Preservation',
   tagline: 'Bảo tồn bản sắc giữa dòng chảy hội nhập',
   quote: '"Cái gốc của một dân tộc chính là văn hóa. Mất văn hóa là mất tất cả."',
   footerDescription: 'Nỗ lực số hóa và lưu giữ những giá trị văn hóa độc bản của các dân tộc thiểu số Việt Nam trong thời đại số.'
