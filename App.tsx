@@ -226,7 +226,7 @@ const App: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">
                     <a 
-                      href="https://v0-le-nin-chess-backup.vercel.app/" 
+                      href="https://hadesoverflow-lenin-iadc.bolt.host/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-full bg-primary hover:bg-[#F59E0B] text-white font-bold py-4 px-8 rounded-xl text-lg transition-all hover:scale-[1.02] shadow-2xl hover:shadow-primary/50 flex items-center justify-center gap-2"
